@@ -1,0 +1,20 @@
+:root {
+  --main-color: #c72a53;
+  --mujanda: #9d0c67;
+  --light-grey: #dcdcdc;
+  --dark-grey: #a4a4a4;
+}
+/* NAVBAR */
+.navbar {
+  background-color: var(--dark-grey);
+}
+.navbar-logo {
+  height: 70px;
+}
+.navbar ul li a {
+  color: var(--main-color);
+}
+.navbar ul li a:hover {
+  color: var(--mujanda);
+  animation: headShake 1s;
+}
