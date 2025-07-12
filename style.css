@@ -60,3 +60,55 @@
   font-size: 1.6rem;
   color: var(--light-grey);
 }
+/* Middle Section Styling  */
+.middle-section {
+  padding: 90px 0;
+  background-color: var(--dark-grey);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.section-title span {
+  color: var(--main-color);
+}
+.section-subtitle {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-on-light);
+}
+
+.info-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 20px rgb(103, 98, 98);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+.info-card .icon {
+  font-size: 40px;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+.info-card .icon:hover {
+  color: var(--mujanda);
+}
+.info-card h4 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.info-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
