@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aimers Academy - O/levels and A/levels</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!-- FontAwsome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- ANIMATE.CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        :root {
+            --main-color: #c72a53;
+            --mujanda: #9d0c67;
+            --light-grey: #dcdcdc;
+            --dark-grey: #a4a4a4;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark-grey);
+        }
+
+        /* CONTACT FORM STYLING */
+        #contact {
+            background-color: var(--light-grey);
+        }
+
+        .section-title {
+            color: var(--main-color);
+            font-weight: bold;
+        }
+
+        .form-control {
+            background-color: #fff;
+            border: 1px solid var(--dark-grey);
+            color: var(--mujanda);
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: var(--main-color);
+            box-shadow: 0 0 0 0.25rem rgba(199, 42, 83, 0.25);
+            color: var(--mujanda);
+        }
+
+        .form-label {
+            color: var(--main-color);
+            font-weight: 500;
+        }
+
+        .custom-btn {
+            background-color: var(--main-color);
+            border: none;
+            color: white;
+        }
+
+        .custom-btn:hover {
+            background-color: var(--mujanda);
+            color: black;
+        }
+
+        .social-icon i {
+            color: var(--mujanda);
+            transition: color 0.3s ease;
+        }
+
+        .social-icon i:hover {
+            color: var(--main-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form action="https://formspree.io/f/mnnzaawz" method="POST" id="contactForm">
+                        <!-- Hidden field to disable CAPTCHA -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                placeholder="Enter Your Email address" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number:</label>
+                            <input type="tel" class="form-control" name="phone" id="phone"
+                                placeholder="e.g. 0333 1234567" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject:</label>
+                            <input type="text" class="form-control" name="subject" id="subject"
+                                placeholder="e.g. Admission Inquiry, Tuition Fee, Class Schedule" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message:</label>
+                            <textarea class="form-control" name="message" id="message" rows="5"
+                                placeholder="Write your detailed message here. You can ask about courses, timings, teachers, or any other concern."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn custom-btn w-100">Send Message</button>
+                    </form>
+
+                    <p class="text-center mt-4 text-dark">
+                        Or connect with us on:
+                        <a href="https://www.instagram.com/aimers.pk/" target="_blank" class="mx-2 social-icon"><i
+                                class="fa-brands fa-square-instagram fs-4"></i></a>
+                        <a href="https://www.facebook.com/share/15rdY8MPZx/" target="_blank" class="mx-2 social-icon"><i
+                                class="fa-brands fa-square-facebook fs-4"></i></a>
+                        <a href="mailto:aimersonlineacademy786@gmail.com" class="mx-2 social-icon">
+                            <i class="fas fa-envelope fs-4"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SWEET ALERT CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- BOOTSTRAP CDN -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Message Sent!',
+                            text: 'Thank you for contacting us. We’ll get back to you soon.',
+                            confirmButtonColor: '#c72a53'
+                        });
+                        form.reset();
+                    } else {
+                        return response.json().then(data => {
+                            throw new Error(data.error || "Something went wrong.");
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        text: error.message || 'Something went wrong while sending the message.',
+                        confirmButtonColor: '#c72a53'
+                    });
+                });
+        });
+
+    </script>
+</body>
+
+</html>
