@@ -11,68 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- ANIMATE.CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        :root {
-            --main-color: #c72a53;
-            --mujanda: #9d0c67;
-            --light-grey: #dcdcdc;
-            --dark-grey: #a4a4a4;
-        }
-
-        body {
-            background-color: #fff;
-            color: var(--dark-grey);
-        }
-
-        /* CONTACT FORM STYLING */
-        #contact {
-            background-color: var(--light-grey);
-        }
-
-        .section-title {
-            color: var(--main-color);
-            font-weight: bold;
-        }
-
-        .form-control {
-            background-color: #fff;
-            border: 1px solid var(--dark-grey);
-            color: var(--mujanda);
-        }
-
-        .form-control:focus {
-            background-color: #fff;
-            border-color: var(--main-color);
-            box-shadow: 0 0 0 0.25rem rgba(199, 42, 83, 0.25);
-            color: var(--mujanda);
-        }
-
-        .form-label {
-            color: var(--main-color);
-            font-weight: 500;
-        }
-
-        .custom-btn {
-            background-color: var(--main-color);
-            border: none;
-            color: white;
-        }
-
-        .custom-btn:hover {
-            background-color: var(--mujanda);
-            color: black;
-        }
-
-        .social-icon i {
-            color: var(--mujanda);
-            transition: color 0.3s ease;
-        }
-
-        .social-icon i:hover {
-            color: var(--main-color);
-        }
-    </style>
 </head>
 
 <body>
@@ -138,45 +78,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- BOOTSTRAP CDN -->
     <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const form = e.target;
-
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Message Sent!',
-                            text: 'Thank you for contacting us. We’ll get back to you soon.',
-                            confirmButtonColor: '#c72a53'
-                        });
-                        form.reset();
-                    } else {
-                        return response.json().then(data => {
-                            throw new Error(data.error || "Something went wrong.");
-                        });
-                    }
-                })
-                .catch(error => {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops!',
-                        text: error.message || 'Something went wrong while sending the message.',
-                        confirmButtonColor: '#c72a53'
-                    });
-                });
-        });
-
-    </script>
 </body>
 
 </html>

@@ -123,3 +123,50 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
+/* ADDMISSION SECTION  */
+#contact {
+  background-color: var(--light-grey);
+}
+
+.section-title {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: #fff;
+  border: 1px solid var(--dark-grey);
+  color: var(--mujanda);
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(199, 42, 83, 0.25);
+  color: var(--mujanda);
+}
+
+.form-label {
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+.custom-btn {
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+}
+
+.custom-btn:hover {
+  background-color: var(--mujanda);
+  color: black;
+}
+
+.social-icon i {
+  color: var(--mujanda);
+  transition: color 0.3s ease;
+}
+
+.social-icon i:hover {
+  color: var(--main-color);
+}
