@@ -60,6 +60,7 @@
   font-size: 1.6rem;
   color: var(--light-grey);
 }
+
 /* Middle Section Styling  */
 .middle-section {
   padding: 90px 0;
@@ -71,6 +72,7 @@
   font-weight: 700;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: black;
 }
 .section-title span {
   color: var(--main-color);
@@ -128,7 +130,7 @@
   background-color: var(--light-grey);
 }
 
-.section-title {
+.cont-section {
   color: var(--main-color);
   font-weight: bold;
 }
