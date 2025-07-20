@@ -1,3 +1,5 @@
+// ADDMISSION FORM SWEET ALERT SECTION
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
