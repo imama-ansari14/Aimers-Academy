@@ -4,6 +4,7 @@
   --light-grey: #dcdcdc;
   --dark-grey: #a4a4a4;
 }
+
 /* NAVBAR */
 .navbar {
   background-color: var(--dark-grey);
