@@ -5,6 +5,24 @@
   --dark-grey: #a4a4a4;
 }
 
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-grey);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mujanda);
+}
+
 /* NAVBAR */
 .navbar {
   background-color: var(--dark-grey);
