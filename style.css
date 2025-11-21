@@ -4,6 +4,35 @@
   --light-grey: #dcdcdc;
   --dark-grey: #a4a4a4;
 }
+/* cursor-following ripple */
+body {
+  margin: 0;
+  height: 100vh;
+}
+.cursor,
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Small main cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #9d0c67;
+}
+
+/* Large faded one */
+.cursor-trail {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(157, 12, 103, 0.3);
+}
 
 /* Scrollbar customization */
 ::-webkit-scrollbar {
