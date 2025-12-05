@@ -208,15 +208,3 @@ body {
 .social-icon i:hover {
   color: var(--main-color);
 }
-
-/* Footer Styling */
-.footer {
-  background-color: var(--main-color);
-  padding: 40px 0;
-  text-align: center;
-}
-.footer p {
-  color: var(--light-grey);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
