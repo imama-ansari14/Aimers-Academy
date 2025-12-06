@@ -129,7 +129,6 @@ body {
   font-size: 1.4rem;
   max-width: 700px;
   margin: 0 auto;
-  color: var(--text-on-light);
 }
 
 .info-card {
@@ -159,20 +158,9 @@ body {
   margin-bottom: 10px;
 }
 .info-card p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 0.97rem;
 }
-/* Footer Styling */
-.footer {
-  background-color: var(--main-color);
-  padding: 40px 0;
-  text-align: center;
-}
-.footer p {
-  color: var(--light-grey);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+
 /* ADDMISSION SECTION  */
 #contact {
   background-color: var(--light-grey);
@@ -219,4 +207,16 @@ body {
 
 .social-icon i:hover {
   color: var(--main-color);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--main-color);
+  padding: 40px 0;
+  text-align: center;
+}
+.footer p {
+  color: var(--light-grey);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
