@@ -25,8 +25,8 @@
             <h2 class="text-center mb-4 cont-section">Get in Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form action="https://formspree.io/f/mnnzaawz" method="POST" id="contactForm">
-                        <!-- Hidden field to disable CAPTCHA -->
+                    <form action="https://formspree.io/f/mnnzaawz" method="POST" id="contactForm"
+                        onsubmit="return validateCheckboxes()">
                         <input type="hidden" name="_captcha" value="false">
 
                         <div class="mb-3">
@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address:</label>
                             <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Enter Your Email address" >
+                                placeholder="Enter Your Email address">
                         </div>
 
                         <div class="mb-3">
@@ -48,11 +48,57 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="subject" class="form-label"><span class="text-black">*</span>Subject:</label>
-                            <input type="text" class="form-control" name="subject" id="subject"
-                                placeholder="e.g. Admission Inquiry, Tuition Fee, Class Schedule" required>
-                        </div>
+                            <label class="form-label"><span class="text-black">*</span> Subject :</label>
 
+                            <div id="subject-error" class="text-danger small" style="display:none;">Please select at
+                                least one subject.</div>
+
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="Admission Inquiry" id="subjectAdmission">
+                                <label class="form-check-label" for="subjectAdmission">5090 - Biology</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="Tuition Fee/Payment" id="subjectFee">
+                                <label class="form-check-label" for="subjectFee">2210 - Computer</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="Course/Class Schedule" id="subjectSchedule">
+                                <label class="form-check-label" for="subjectSchedule">5070 - Chemistry </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="Teacher/Staff Feedback" id="subjectFeedback">
+                                <label class="form-check-label" for="subjectFeedback">5045 - Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="Technical Issue/Website" id="subjectTech">
+                                <label class="form-check-label" for="subjectTech">4024 - Maths</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="General Inquiry/Other" id="subjectOther">
+                                <label class="form-check-label" for="subjectOther">1123 - English </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="General Inquiry/Other" id="subjectOther">
+                                <label class="form-check-label" for="subjectOther">3247/3248 - Urdu </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="General Inquiry/Other" id="subjectOther">
+                                <label class="form-check-label" for="subjectOther">2058 - Islamiat </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
+                                    value="General Inquiry/Other" id="subjectOther">
+                                <label class="form-check-label" for="subjectOther">2059 - Pakistan Studies </label>
+                            </div>
+                        </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message:</label>
                             <textarea class="form-control" name="message" id="message" rows="5"
