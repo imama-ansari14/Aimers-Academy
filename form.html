@@ -29,76 +29,92 @@
                         onsubmit="return validateCheckboxes()">
                         <input type="hidden" name="_captcha" value="false">
 
+                        <!-- NAME -->
                         <div class="mb-3">
                             <label for="name" class="form-label"><span class="text-black">*</span> Name:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name"
                                 required>
                         </div>
 
+                        <!-- EMAIL -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address:</label>
                             <input type="email" class="form-control" name="email" id="email"
                                 placeholder="Enter Your Email address">
                         </div>
 
+                        <!-- PHONE -->
                         <div class="mb-3">
                             <label for="phone" class="form-label"><span class="text-black">*</span>Phone Number:</label>
                             <input type="tel" class="form-control" name="phone" id="phone"
                                 placeholder="e.g. 0333 1234567" required>
                         </div>
 
+                        <!-- SUBJECT -->
                         <div class="mb-3">
                             <label class="form-label"><span class="text-black">*</span> Subject :</label>
 
-                            <div id="subject-error" class="text-danger small" style="display:none;">Please select at
-                                least one subject.</div>
+                            <div id="subject-error" class="text-danger small" style="display:none;">
+                                Please select at least one subject.
+                            </div>
 
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="Admission Inquiry" id="subjectAdmission">
-                                <label class="form-check-label" for="subjectAdmission">5090 - Biology</label>
+                                    value="5090 - Biology" id="subjectBiology">
+                                <label class="form-check-label" for="subjectBiology">5090 - Biology</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="Tuition Fee/Payment" id="subjectFee">
-                                <label class="form-check-label" for="subjectFee">2210 - Computer</label>
+                                    value="2210 - Computer" id="subjectComputer">
+                                <label class="form-check-label" for="subjectComputer">2210 - Computer</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="Course/Class Schedule" id="subjectSchedule">
-                                <label class="form-check-label" for="subjectSchedule">5070 - Chemistry </label>
+                                    value="5070 - Chemistry" id="subjectChemistry">
+                                <label class="form-check-label" for="subjectChemistry">5070 - Chemistry</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="Teacher/Staff Feedback" id="subjectFeedback">
-                                <label class="form-check-label" for="subjectFeedback">5045 - Physics</label>
+                                    value="5045 - Physics" id="subjectPhysics">
+                                <label class="form-check-label" for="subjectPhysics">5045 - Physics</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="Technical Issue/Website" id="subjectTech">
-                                <label class="form-check-label" for="subjectTech">4024 - Maths</label>
+                                    value="4024 - Maths" id="subjectMaths">
+                                <label class="form-check-label" for="subjectMaths">4024 - Maths</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="General Inquiry/Other" id="subjectOther">
-                                <label class="form-check-label" for="subjectOther">1123 - English </label>
+                                    value="1123 - English" id="subjectEnglish">
+                                <label class="form-check-label" for="subjectEnglish">1123 - English</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="General Inquiry/Other" id="subjectOther">
-                                <label class="form-check-label" for="subjectOther">3247/3248 - Urdu </label>
+                                    value="3247/3248 - Urdu" id="subjectUrdu">
+                                <label class="form-check-label" for="subjectUrdu">3247/3248 - Urdu</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="General Inquiry/Other" id="subjectOther">
-                                <label class="form-check-label" for="subjectOther">2058 - Islamiat </label>
+                                    value="2058 - Islamiat" id="subjectIslamiat">
+                                <label class="form-check-label" for="subjectIslamiat">2058 - Islamiat</label>
                             </div>
+
                             <div class="form-check">
                                 <input class="form-check-input subject-checkbox" type="checkbox" name="subject[]"
-                                    value="General Inquiry/Other" id="subjectOther">
-                                <label class="form-check-label" for="subjectOther">2059 - Pakistan Studies </label>
+                                    value="2059 - Pakistan Studies" id="subjectPakStudies">
+                                <label class="form-check-label" for="subjectPakStudies">2059 - Pakistan Studies</label>
                             </div>
                         </div>
+
+
+                        <!-- MESSAGE -->
                         <div class="mb-3">
                             <label for="message" class="form-label">Message:</label>
                             <textarea class="form-control" name="message" id="message" rows="5"
@@ -126,6 +142,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- BOOTSTRAP CDN -->
     <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <!-- CUSTOM JS -->
     <script src="app.js"></script>
 </body>
 
