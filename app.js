@@ -27,40 +27,57 @@ function animate() {
 animate();
 
 // ADDMISSION FORM SWEET ALERT SECTION
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const form = e.target;
 
-    fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-        .then(response => {
-            if (response.ok) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Message Sent!',
-                    text: 'Thank you for contacting us. We’ll get back to you soon.',
-                    confirmButtonColor: '#c72a53'
-                });
-                form.reset();
-            } else {
-                return response.json().then(data => {
-                    throw new Error(data.error || "Something went wrong.");
-                });
-            }
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops!',
-                text: error.message || 'Something went wrong while sending the message.',
-                confirmButtonColor: '#c72a53'
-            });
-        });
-});
+    // REQUIRED FIELD CHECK
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const subjects = document.querySelectorAll(".subject-checkbox:checked");
 
+    // VALIDATION
+    if (name === "" || phone === "" || subjects.length === 0) {
+
+        Swal.fire({
+            icon: "error",
+            title: "Missing Information",
+            text: "Please fill all required fields and select at least one subject.",
+            confirmButtonColor: "#c72a53"
+        });
+
+        return; // STOP FORM SUBMISSION
+    }
+
+    // If everything is filled correctly → Submit to Formspree
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            Swal.fire({
+                icon: "success",
+                title: "Message Sent!",
+                text: "Thank you for contacting us. We'll get back to you soon.",
+                confirmButtonColor: "#c72a53"
+            });
+
+            form.reset(); // clear form
+
+        } else {
+            throw new Error("Something went wrong. Please try again.");
+        }
+
+    } catch (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops!",
+            text: error.message,
+            confirmButtonColor: "#c72a53"
+        });
+    }
+});
