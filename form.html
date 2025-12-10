@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- ANIMATE.CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--CUSTOM STYLE SHEET -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,7 +22,18 @@
  <!-- cursor-following ripple -->
     <div class="cursor"></div>
     <div class="cursor-trail"></div>
-    
+
+     <!-- Hero Section with Breadcrumb -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Contact Us</h1>
+            <nav class="breadcrumb-nav align-center" aria-label="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Contacts</span>
+            </nav>
+        </div>
+    </section>
     <!-- CONTACT FORM -->
     <section id="contact" class="py-5">
         <div class="container">
@@ -34,7 +46,7 @@
 
                         <!-- NAME -->
                         <div class="mb-3">
-                            <label for="name" class="form-label"><span class="text-black">*</span> Name:</label>
+                            <label for="name" class="form-label"><span class="text-black fw-bold">*</span> Name:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name"
                                 required>
                         </div>
@@ -48,14 +60,14 @@
 
                         <!-- PHONE -->
                         <div class="mb-3">
-                            <label for="phone" class="form-label"><span class="text-black">*</span>Phone Number:</label>
+                            <label for="phone" class="form-label"><span class="text-black fw-bold">*</span>Phone Number:</label>
                             <input type="tel" class="form-control" name="phone" id="phone"
                                 placeholder="e.g. 0333 1234567" required>
                         </div>
 
                         <!-- SUBJECT -->
                         <div class="mb-3">
-                            <label class="form-label"><span class="text-black">*</span> Subject :</label>
+                            <label class="form-label"><span class="text-black fw-bold">*</span> Subject :</label>
 
                             <div id="subject-error" class="text-danger small" style="display:none;">
                                 Please select at least one subject.
