@@ -23,61 +23,63 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
-
 animate();
 
+
 // ADDMISSION FORM SWEET ALERT SECTION
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+if (window.location.href.indexOf("contact.html") > -1) {
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-    const form = e.target;
+        const form = e.target;
 
-    // REQUIRED FIELD CHECK
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const subjects = document.querySelectorAll(".subject-checkbox:checked");
+        // REQUIRED FIELD CHECK
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const subjects = document.querySelectorAll(".subject-checkbox:checked");
 
-    // VALIDATION
-    if (name === "" || phone === "" || subjects.length === 0) {
+        // VALIDATION
+        if (name === "" || phone === "" || subjects.length === 0) {
 
-        Swal.fire({
-            icon: "error",
-            title: "Missing Information",
-            text: "Please fill all required fields and select at least one subject.",
-            confirmButtonColor: "#c72a53"
-        });
-
-        return; // STOP FORM SUBMISSION
-    }
-
-    // If everything is filled correctly → Submit to Formspree
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
             Swal.fire({
-                icon: "success",
-                title: "Message Sent!",
-                text: "Thank you for contacting us. We'll get back to you soon.",
+                icon: "error",
+                title: "Missing Information",
+                text: "Please fill all required fields and select at least one subject.",
                 confirmButtonColor: "#c72a53"
             });
 
-            form.reset(); // clear form
-
-        } else {
-            throw new Error("Something went wrong. Please try again.");
+            return; // STOP FORM SUBMISSION
         }
 
-    } catch (error) {
-        Swal.fire({
-            icon: "error",
-            title: "Oops!",
-            text: error.message,
-            confirmButtonColor: "#c72a53"
-        });
-    }
-});
+        // If everything is filled correctly → Submit to Formspree
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Message Sent!",
+                    text: "Thank you for contacting us. We'll get back to you soon.",
+                    confirmButtonColor: "#c72a53"
+                });
+
+                form.reset(); // clear form
+
+            } else {
+                throw new Error("Something went wrong. Please try again.");
+            }
+
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops!",
+                text: error.message,
+                confirmButtonColor: "#c72a53"
+            });
+        }
+    });
+}
