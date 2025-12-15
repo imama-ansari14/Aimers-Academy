@@ -40,15 +40,12 @@
             <h2 class="text-center mb-4 cont-section">Get in Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form action="https://formspree.io/f/mnnzaawz" method="POST" id="contactForm"
-                        onsubmit="return validateCheckboxes()">
-                        <input type="hidden" name="_captcha" value="false">
+                    <form id="contactForm" novalidate>
 
                         <!-- NAME -->
                         <div class="mb-3">
                             <label for="name" class="form-label"><span class="text-black fw-bold">*</span> Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name"
-                                required>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
                         </div>
 
                         <!-- EMAIL -->
@@ -63,7 +60,7 @@
                             <label for="phone" class="form-label"><span class="text-black fw-bold">*</span>Phone
                                 Number:</label>
                             <input type="tel" class="form-control" name="phone" id="phone"
-                                placeholder="e.g. 0333 1234567" required>
+                                placeholder="e.g. 0333 1234567">
                         </div>
 
                         <!-- SUBJECT -->
@@ -136,7 +133,12 @@
                                 placeholder="Write your detailed message here. You can ask about courses, timings, teachers, or any other concern."></textarea>
                         </div>
 
-                        <button type="submit" class="btn custom-btn w-100">Send Message</button>
+                        <!-- BUTTON -->
+                        <button type="submit" class="btn custom-btn w-100" id="submitBtn">
+                            Send Message
+                        </button>
+
+
                     </form>
 
                     <!-- SOCIALS -->
