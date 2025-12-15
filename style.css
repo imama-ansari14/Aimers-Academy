@@ -272,15 +272,149 @@ body {
   margin-top: 5px;
 }
 
-/* Placeholder image styling */
-.faculty-placeholder {
-  width: 100%;
-  height: 100%;
+/* Statistics Section Styling */
+.statistics-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, var(--dark-grey) 0%, #888 100%);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 15px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(157, 12, 103, 0.3);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--main-color), var(--mujanda));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-details {
+  flex: 1;
+}
+
+.stat-count {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 0;
+}
+
+.stat-count::after {
+  content: "+";
+  font-size: 1.5rem;
+}
+
+.stat-text {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 5px 0 0 0;
+  font-weight: 600;
+}
+.graph-container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.graph-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+}
+
+.grade-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grade-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grade-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grade-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.grade-percentage {
+  font-weight: 700;
+  color: var(--main-color);
+  font-size: 1.1rem;
+}
+
+.grade-bar-bg {
+  width: 100%;
+  height: 30px;
+  background-color: var(--light-grey);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.grade-bar-fill {
+  height: 100%;
+  border-radius: 15px;
+  transition: width 1.5s ease-in-out;
+  animation: fillBar 1.5s ease-in-out;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-count {
+    font-size: 2rem;
+  }
 }
 
 /* Footer Styling */
@@ -447,6 +581,7 @@ body {
 .footer-bottom-links a:hover {
   color: white;
 }
+
 /* ADDMISSION FORM */
 /*  Breadcrumb */
 .page-hero {
@@ -497,7 +632,7 @@ body {
   }
 }
 
-/* Breadcrumb */
+/* Breadcrumb Nav */
 .breadcrumb-nav {
   display: flex;
   justify-content: center;

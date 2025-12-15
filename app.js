@@ -25,6 +25,118 @@ function animate() {
 }
 animate();
 
+// GRAPHS SECTION
+const counters = document.querySelectorAll('.stat-count');
+let animated = false;
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        updateCounter();
+    });
+};
+
+// Intersection Observer for counter animation
+const statsSection = document.querySelector('.statistics-section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+            animateCounters();
+            animated = true;
+        }
+    });
+}, { threshold: 0.5 });
+
+if (statsSection) {
+    observer.observe(statsSection);
+}
+
+// Chart.js - Enrollment Growth Chart
+const ctx = document.getElementById('enrollmentChart');
+if (ctx) {
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+            datasets: [{
+                label: 'Students Enrolled',
+                data: [50, 120, 200, 320, 450, 500],
+                borderColor: '#c72a53',
+                backgroundColor: 'rgba(199, 42, 83, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                pointBackgroundColor: '#c72a53',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: '#9d0c67',
+                    padding: 12,
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 13
+                    },
+                    cornerRadius: 8
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            size: 12
+                        },
+                        color: '#666'
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        color: '#666'
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+}
+
+
 // ADDMISSION FORM SWEET ALERT SECTION
 if (window.location.href.includes("form.html")) {
 

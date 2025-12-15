@@ -296,6 +296,154 @@
         </div>
     </section>
 
+    <!-- STATISTICS SECTION -->
+    <section class="statistics-section" id="stats">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our <span>Success Story</span></h2>
+                <p class="section-subtitle">
+                    Numbers that speak for our commitment to excellence and student success
+                </p>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Left Side - Stats Cards -->
+                <div class="col-lg-5 mb-4">
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3 class="stat-count" data-target="1000">0</h3>
+                                <p class="stat-text">Students Enrolled </p>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3 class="stat-count" data-target="80">0</h3>
+                                <p class="stat-text">Average A* Rate</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3 class="stat-count" data-target="10">0</h3>
+                                <p class="stat-text">Expert Teachers</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3 class="stat-count" data-target="90">0</h3>
+                                <p class="stat-text">Success Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Student Enrollment Growth -->
+                <div class="col-lg-7 mb-4">
+                    <div class="graph-container">
+                        <h4 class="graph-title">Student Enrollment Growth (2020-2025)</h4>
+                        <div class="chart-wrapper">
+                            <canvas id="enrollmentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Grade Distribution -->
+                    <div class="graph-container mt-4">
+                        <h4 class="graph-title">Grade Distribution</h4>
+                        <div class="grade-bars">
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">A* Grade</span>
+                                    <span class="grade-percentage">45%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 45%; background: var(--main-color);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">A Grade</span>
+                                    <span class="grade-percentage">35%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 35%; background: var(--mujanda);"></div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">B Grade</span>
+                                    <span class="grade-percentage">15%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 15%; background: #c72a83;"></div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">C Grade</span>
+                                    <span class="grade-percentage">5%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">D Grade</span>
+                                    <span class="grade-percentage">5%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">E Grade</span>
+                                    <span class="grade-percentage">5%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                </div>
+                            </div>
+
+                            <div class="grade-bar-item">
+                                <div class="grade-info">
+                                    <span class="grade-label">U Grade</span>
+                                    <span class="grade-percentage">5%</span>
+                                </div>
+                                <div class="grade-bar-bg">
+                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER SECTION -->
     <footer class="footer">
         <div class="container">
@@ -371,6 +519,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <!-- CUSTOM JS -->
     <script src="app.js"></script>
 </body>
 
