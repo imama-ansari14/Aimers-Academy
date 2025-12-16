@@ -584,7 +584,7 @@ body {
 
 /* ADDMISSION FORM */
 /*  Breadcrumb */
-.page-hero {
+/* .page-hero {
   position: relative;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
@@ -630,10 +630,10 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 /* Breadcrumb Nav */
-.breadcrumb-nav {
+/* .breadcrumb-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -672,7 +672,7 @@ body {
 .breadcrumb-current {
   color: var(--mujanda);
   font-weight: 700;
-}
+} */
 
 /* FORM SECTION  */
 #contact {
