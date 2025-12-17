@@ -189,11 +189,11 @@
                             </p>
                             <div class="faculty-stats">
                                 <div class="stat-item">
-                                    <span class="stat-number">93%</span>
-                                    <span class="stat-label">A* Rate</span>
+                                    <span class="stat-number">90%</span>
+                                    <span class="stat-label">A* Grade</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">1000+</span>
+                                    <span class="stat-number">400+</span>
                                     <span class="stat-label">Students</span>
                                 </div>
                             </div>
@@ -218,8 +218,8 @@
                             </p>
                             <div class="faculty-stats">
                                 <div class="stat-item">
-                                    <span class="stat-number">92%</span>
-                                    <span class="stat-label">A* Rate</span>
+                                    <span class="stat-number">90%</span>
+                                    <span class="stat-label">A* Grade</span>
                                 </div>
                                 <div class="stat-item">
                                     <span class="stat-number">700+</span>
@@ -248,10 +248,10 @@
                             <div class="faculty-stats">
                                 <div class="stat-item">
                                     <span class="stat-number">90%</span>
-                                    <span class="stat-label">A* Rate</span>
+                                    <span class="stat-label">A* Grade</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">400+</span>
+                                    <span class="stat-number">1000+</span>
                                     <span class="stat-label">Students</span>
                                 </div>
                             </div>
@@ -277,11 +277,11 @@
                             </p>
                             <div class="faculty-stats">
                                 <div class="stat-item">
-                                    <span class="stat-number">88%</span>
-                                    <span class="stat-label">A* Rate</span>
+                                    <span class="stat-number">90%</span>
+                                    <span class="stat-label">A* Grade</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">550+</span>
+                                    <span class="stat-number">700+</span>
                                     <span class="stat-label">Students</span>
                                 </div>
                             </div>
@@ -361,79 +361,92 @@
                     <div class="graph-container mt-4">
                         <h4 class="graph-title">Grade Distribution</h4>
                         <div class="grade-bars">
+                            <!-- A* Grade - 50% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">A* Grade</span>
-                                    <span class="grade-percentage">45%</span>
+                                    <span class="grade-percentage">50%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 45%; background: var(--main-color);">
+                                    <div class="grade-bar-fill" data-width="50" style="width: 0%; background: #c72a53;">
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- A Grade - 45% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">A Grade</span>
-                                    <span class="grade-percentage">35%</span>
+                                    <span class="grade-percentage">45%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 35%; background: var(--mujanda);"></div>
+                                    <div class="grade-bar-fill" data-width="45" style="width: 0%; background: #d63d66;">
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- B Grade - 40% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">B Grade</span>
-                                    <span class="grade-percentage">15%</span>
+                                    <span class="grade-percentage">40%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 15%; background: #c72a83;"></div>
+                                    <div class="grade-bar-fill" data-width="40" style="width: 0%; background: #e05079;">
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- C Grade - 35% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">C Grade</span>
-                                    <span class="grade-percentage">5%</span>
+                                    <span class="grade-percentage">35%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                    <div class="grade-bar-fill" data-width="35" style="width: 0%; background: #ea638c;">
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- D Grade - 30% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">D Grade</span>
-                                    <span class="grade-percentage">5%</span>
+                                    <span class="grade-percentage">30%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                    <div class="grade-bar-fill" data-width="30" style="width: 0%; background: #f4769f;">
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- E Grade - 25% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">E Grade</span>
-                                    <span class="grade-percentage">5%</span>
+                                    <span class="grade-percentage">25%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                    <div class="grade-bar-fill" data-width="25" style="width: 0%; background: #f989b2;">
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- U Grade - 5% -->
                             <div class="grade-bar-item">
                                 <div class="grade-info">
                                     <span class="grade-label">U Grade</span>
                                     <span class="grade-percentage">5%</span>
                                 </div>
                                 <div class="grade-bar-bg">
-                                    <div class="grade-bar-fill" style="width: 5%; background: var(--dark-grey);"></div>
+                                    <div class="grade-bar-fill" data-width="5" style="width: 0%; background: #fc9cc5;">
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+
                 </div>
 
             </div>

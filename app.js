@@ -25,111 +25,92 @@ function animate() {
 }
 animate();
 
-// GRAPHS SECTION
-const counters = document.querySelectorAll('.stat-count');
-let animated = false;
+// Counter Animation
+const counters = document.querySelectorAll(".stat-count");
+let countersStarted = false;
 
-const animateCounters = () => {
+function startCounters() {
     counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const increment = target / (duration / 16);
+        const target = Number(counter.dataset.target);
         let current = 0;
+        const speed = 200; // smaller = faster
 
         const updateCounter = () => {
+            const increment = Math.ceil(target / speed);
             current += increment;
+
             if (current < target) {
-                counter.textContent = Math.ceil(current);
+                counter.textContent = current;
                 requestAnimationFrame(updateCounter);
             } else {
                 counter.textContent = target;
             }
         };
+
         updateCounter();
     });
-};
-
-// Intersection Observer for counter animation
-const statsSection = document.querySelector('.statistics-section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-            animateCounters();
-            animated = true;
-        }
-    });
-}, { threshold: 0.5 });
-
-if (statsSection) {
-    observer.observe(statsSection);
 }
 
-// Chart.js - Enrollment Growth Chart
-const ctx = document.getElementById('enrollmentChart');
-if (ctx) {
-    new Chart(ctx, {
-        type: 'line',
+// Counters
+const statsSection = document.querySelector(".statistics-section");
+
+const statsObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersStarted) {
+                startCounters();
+                countersStarted = true;
+                statsObserver.disconnect(); // stop observing after first run
+            }
+        });
+    },
+    { threshold: 0.4 }
+);
+
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+
+// CHART.JS (Enrollment Growth)
+const chartCanvas = document.getElementById("enrollmentChart");
+if (chartCanvas) {
+    new Chart(chartCanvas, {
+        type: "line",
         data: {
-            labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
-            datasets: [{
-                label: 'Students Enrolled',
-                data: [50, 120, 200, 320, 450, 500],
-                borderColor: '#c72a53',
-                backgroundColor: 'rgba(199, 42, 83, 0.1)',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                pointBackgroundColor: '#c72a53',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2
-            }]
+            labels: ["2020", "2021", "2022", "2023", "2024", "2025"],
+            datasets: [
+                {
+                    label: "Students Enrolled",
+                    data: [50, 120, 200, 320, 450, 500],
+                    borderColor: "#c72a53",
+                    backgroundColor: "rgba(199, 42, 83, 0.15)",
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: "#c72a53",
+                    pointBorderColor: "#fff",
+                    pointBorderWidth: 2
+                }
+            ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    backgroundColor: '#9d0c67',
-                    padding: 12,
-                    titleFont: {
-                        size: 14,
-                        weight: 'bold'
-                    },
-                    bodyFont: {
-                        size: 13
-                    },
-                    cornerRadius: 8
-                }
+                legend: { display: false }
             },
             scales: {
                 y: {
                     beginAtZero: true,
-                    ticks: {
-                        font: {
-                            size: 12
-                        },
-                        color: '#666'
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.05)'
-                    }
+                    ticks: { color: "#666" },
+                    grid: { color: "rgba(0,0,0,0.05)" }
                 },
                 x: {
-                    ticks: {
-                        font: {
-                            size: 12,
-                            weight: 'bold'
-                        },
-                        color: '#666'
-                    },
-                    grid: {
-                        display: false
-                    }
+                    ticks: { color: "#666" },
+                    grid: { display: false }
                 }
             }
         }
@@ -137,7 +118,50 @@ if (ctx) {
 }
 
 
-// ADDMISSION FORM SWEET ALERT SECTION
+// ========================================
+// GRADE BARS ANIMATION (NEW CODE - ADD THIS)
+// ========================================
+
+function animateGradeBars() {
+    const gradeBars = document.querySelectorAll('.grade-bar-fill');
+
+    gradeBars.forEach((bar, index) => {
+        const targetWidth = bar.getAttribute('data-width');
+
+        // Delay each bar slightly for staggered animation
+        setTimeout(() => {
+            bar.style.width = targetWidth + '%';
+        }, index * 100); // 100ms delay between each bar
+    });
+}
+
+// Intersection Observer for Grade Bars
+const gradeBarsSection = document.querySelector('.grade-bars');
+let gradeBarsAnimated = false;
+
+const gradeBarsObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !gradeBarsAnimated) {
+                animateGradeBars();
+                gradeBarsAnimated = true;
+                gradeBarsObserver.disconnect(); // stop observing after animation
+            }
+        });
+    },
+    { threshold: 0.3 }
+);
+
+if (gradeBarsSection) {
+    gradeBarsObserver.observe(gradeBarsSection);
+}
+
+// ========================================
+// END OF GRADE BARS ANIMATION
+// ========================================
+
+
+// ADMISSION FORM SWEET ALERT SECTION
 if (window.location.href.includes("form.html")) {
 
     // Get the form element

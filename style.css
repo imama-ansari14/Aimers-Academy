@@ -4,6 +4,7 @@
   --light-grey: #dcdcdc;
   --dark-grey: #a4a4a4;
 }
+
 /* cursor-following ripple */
 body {
   margin: 0;
@@ -66,6 +67,7 @@ body {
   color: var(--mujanda);
   animation: headShake 1s;
 }
+
 /* HERO SECTION */
 .hero-section {
   position: relative;
@@ -91,7 +93,7 @@ body {
 
 /* Middle Section Styling  */
 .middle-section {
-  padding: 90px 0;
+  padding: 40px 0;
   background-color: var(--dark-grey);
 }
 
@@ -144,7 +146,7 @@ body {
 
 /* Faculty Section Styling */
 .faculty-section {
-  padding: 90px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
 }
 
@@ -255,7 +257,7 @@ body {
 
 /* Statistics Section Styling */
 .statistics-section {
-  padding: 90px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, var(--dark-grey) 0%, #888 100%);
 }
 
