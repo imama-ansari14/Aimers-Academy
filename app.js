@@ -156,11 +156,6 @@ if (gradeBarsSection) {
     gradeBarsObserver.observe(gradeBarsSection);
 }
 
-// ========================================
-// END OF GRADE BARS ANIMATION
-// ========================================
-
-
 // ADMISSION FORM SWEET ALERT SECTION
 if (window.location.href.includes("form.html")) {
 
