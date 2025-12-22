@@ -117,11 +117,7 @@ if (chartCanvas) {
     });
 }
 
-
-// ========================================
-// GRADE BARS ANIMATION (NEW CODE - ADD THIS)
-// ========================================
-
+// GRADE BARS ANIMATION 
 function animateGradeBars() {
     const gradeBars = document.querySelectorAll('.grade-bar-fill');
 
@@ -274,3 +270,29 @@ if (window.location.href.includes("form.html")) {
         });
     }
 }
+
+// RESOURCES PAGE 
+const bgPattern = document.getElementById('bgPattern');
+for (let i = 0; i < 15; i++) {
+    const circle = document.createElement('div');
+    circle.className = 'pattern-circle';
+    circle.style.width = `${Math.random() * 150 + 100}px`;
+    circle.style.height = circle.style.width;
+    circle.style.left = `${Math.random() * 100}%`;
+    circle.style.top = `${Math.random() * 100}%`;
+    circle.style.animationDelay = `${Math.random() * 20}s`;
+    circle.style.animationDuration = `${Math.random() * 15 + 15}s`;
+    bgPattern.appendChild(circle);
+}
+
+// Box hover effect
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('mouseenter', function () {
+        cursor.style.transform = 'scale(2)';
+        cursor.style.borderColor = 'var(--main-color)';
+    });
+
+    box.addEventListener('mouseleave', function () {
+        cursor.style.transform = 'scale(1)';
+    });
+});
