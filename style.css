@@ -158,12 +158,12 @@ body {
 .hero-section {
   position: relative;
   background: url("images/hero.jpg") no-repeat center center/cover;
-  padding: 120px 0;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* padding: 120px 0; */
+  min-height: 800px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
 }
 
 .hero-overlay {
@@ -851,11 +851,31 @@ body {
   letter-spacing: 3px;
   margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.page-header h1:hover {
-  text-decoration: underline 3px var(--main-color);
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+/* Underline that animates from left to right */
+.page-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: var(--main-color);
+  transition: width 0.8s ease;
+}
+
+.page-header h1:hover::after {
+  width: 100%;
+}
+
+.page-header h1:hover {
+  transform: translateY(-5px);
+}
 /* Main Content */
 .resource-section {
   display: grid;
