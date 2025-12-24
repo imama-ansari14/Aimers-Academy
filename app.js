@@ -25,6 +25,14 @@ function animate() {
 }
 animate();
 
+// AOS Initialization
+ AOS.init({
+    duration: 900,
+    easing: 'ease-in-out',
+    once: true
+  });
+
+
 // Counter Animation
 const counters = document.querySelectorAll(".stat-count");
 let countersStarted = false;
@@ -272,6 +280,7 @@ if (window.location.href.includes("form.html")) {
 }
 
 // RESOURCES PAGE 
+if (window.location.href.includes("resources.html")) {
 const bgPattern = document.getElementById('bgPattern');
 for (let i = 0; i < 15; i++) {
     const circle = document.createElement('div');
@@ -296,3 +305,4 @@ document.querySelectorAll('.box').forEach(box => {
         cursor.style.transform = 'scale(1)';
     });
 });
+}
