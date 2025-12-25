@@ -25,14 +25,6 @@ function animate() {
 }
 animate();
 
-// AOS Initialization
- AOS.init({
-    duration: 900,
-    easing: 'ease-in-out',
-    once: true
-  });
-
-
 // Counter Animation
 const counters = document.querySelectorAll(".stat-count");
 let countersStarted = false;
