@@ -25,53 +25,6 @@ function animate() {
 }
 animate();
 
-// Counter Animation
-const counters = document.querySelectorAll(".stat-count");
-let countersStarted = false;
-
-function startCounters() {
-    counters.forEach(counter => {
-        const target = Number(counter.dataset.target);
-        let current = 0;
-        const speed = 200; // smaller = faster
-
-        const updateCounter = () => {
-            const increment = Math.ceil(target / speed);
-            current += increment;
-
-            if (current < target) {
-                counter.textContent = current;
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
-        };
-
-        updateCounter();
-    });
-}
-
-// Counters
-const statsSection = document.querySelector(".statistics-section");
-
-const statsObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !countersStarted) {
-                startCounters();
-                countersStarted = true;
-                statsObserver.disconnect(); // stop observing after first run
-            }
-        });
-    },
-    { threshold: 0.4 }
-);
-
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
-
 // CHART.JS 
 // (Enrollment Growth)
 const chartCanvas = document.getElementById("enrollmentChart");
@@ -117,6 +70,53 @@ if (chartCanvas) {
         }
     });
 }
+
+// COUNTER ANIMATION - FIXED FOR MOBILE
+const counters = document.querySelectorAll(".stat-count");
+let countersStarted = false;
+
+function startCounters() {
+    counters.forEach(counter => {
+        const target = Number(counter.dataset.target);
+        let current = 0;
+        const speed = 200; // smaller = faster
+
+        const updateCounter = () => {
+            const increment = Math.ceil(target / speed);
+            current += increment;
+
+            if (current < target) {
+                counter.textContent = current;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+
+        updateCounter();
+    });
+}
+
+// Observe the stats-grid directly (not the entire section)
+const statsGrid = document.querySelector(".stats-grid");
+
+const statsObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersStarted) {
+                startCounters();
+                countersStarted = true;
+                statsObserver.disconnect(); // stop observing after first run
+            }
+        });
+    },
+    { threshold: 0.2 } // Changed from 0.4 to 0.2 for better mobile support
+);
+
+if (statsGrid) {
+    statsObserver.observe(statsGrid);
+}
+
 
 // GRADE BARS ANIMATION 
 function animateGradeBars() {
