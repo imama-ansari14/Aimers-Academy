@@ -55,3 +55,10 @@ aimers-academy/
 │   ├── images/
 │   └── icons/
 └── README.md
+
+---
+
+<h1 align="center">⭐️ Thank you for visiting My Projects! </h1>  
+<p align="center">i hope you like My Project. </p> 
+<p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p> 
+
