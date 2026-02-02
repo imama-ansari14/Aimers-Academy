@@ -41,35 +41,12 @@ The website reflects the institution’s values of **discipline, focus, and acad
 
 ---
 
-## 📂 Project Structure
-
-```bash
-aimers-academy/
-│
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── README.md
-
----
-
-<h1 align="center">⭐️ Thank you for visiting My Projects! </h1>  
-<p align="center">i hope you like My Project. </p> 
-<p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p> 
-
-
 ## 👩‍💻 Author
 **Imama Ansari**  
 Frontend Web Developer  
 GitHub: https://github.com/imama-ansari14  
 LinkedIn: https://www.linkedin.com/in/imama-ansari-5a604b337  
 📧 Email: ansariimama@yahoo.com  
-📞 Phone: 03332847377  
 
 ---
 
@@ -81,3 +58,4 @@ This project is created for Client.
 <h1 align="center">⭐️ Thank you for visiting My Projects! </h1>
 <p align="center">i hope you like My Projects </p> 
 <p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p> 
+
