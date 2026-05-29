@@ -32,6 +32,7 @@ The website reflects the institution’s values of **discipline, focus, and acad
 ---
 
 ## 🛠️ Tech Stack
+
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-orange?style=flat-square&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-blue?style=flat-square&logo=css3&logoColor=white" />
@@ -42,20 +43,21 @@ The website reflects the institution’s values of **discipline, focus, and acad
 ---
 
 ## 👩‍💻 Author
+
 **Imama Ansari**  
 Frontend Web Developer  
 GitHub: https://github.com/imama-ansari14  
 LinkedIn: https://www.linkedin.com/in/imama-ansari-5a604b337  
-📧 Email: ansariimama@yahoo.com  
+📧 Email: ansariimama@yahoo.com
 
 ---
 
 ## 📄 License
+
 This project is created for Client.
 
 ---
 
 <h1 align="center">⭐️ Thank you for visiting My Projects! </h1>
 <p align="center">i hope you like My Projects </p> 
-<p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p> 
-
+<p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p>
